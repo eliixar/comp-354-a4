@@ -1,3 +1,10 @@
+# Team 25: COMP354 A4
+
+COMP 354 SCM assignment. Maintainer: Alexa Rokakis (Student A).
+
+Team members: Alexa Rokakis, Nikitas Vourtzoumis, Nicolas Nahas, Zain Yehia
+
+
 # Playground and Cheatsheet for Learning Python
 
 > 🇺🇦 UKRAINE [IS BEING ATTACKED](https://war.ukraine.ua/) BY RUSSIAN ARMY. CIVILIANS ARE GETTING KILLED. RESIDENTIAL AREAS ARE GETTING BOMBED.

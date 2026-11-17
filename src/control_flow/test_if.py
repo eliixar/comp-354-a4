@@ -26,3 +26,27 @@ def test_if_statement():
         conclusion = 'Number bigger than or equal to one'
 
     assert conclusion == 'Number bigger than or equal to one'
+
+
+def test_conditional_expression():
+    """Conditional expressions (the "ternary" if).
+
+    A conditional expression has the form `value_if_true if condition else value_if_false`.
+    It lets us choose between two values on a single line instead of writing a full
+    if ... else block.
+    """
+
+    number = 7
+
+    if number % 2 == 0:
+        parity = 'even'
+    else:
+        parity = 'odd'
+
+    assert parity == 'odd'
+
+    assert ('even' if number % 2 == 0 else 'odd') == 'odd'
+    assert ('even' if 10 % 2 == 0 else 'odd') == 'even'
+
+    labels = ['even' if n % 2 == 0 else 'odd' for n in range(4)]
+    assert labels == ['even', 'odd', 'even', 'odd']

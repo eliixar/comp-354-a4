@@ -94,3 +94,55 @@ def test_if_with_truthiness_and_combined_conditions():
         message = 'Go shopping'
 
     assert message == 'Nothing to buy'
+
+
+def test_nested_if_letter_grade():
+    """Nested if statements and elif chains.
+
+    An elif chain checks conditions from top to bottom and runs only the first block whose
+    condition is true. An if statement can also be placed inside another if block (nested)
+    to make a more specific decision once the outer condition is known.
+    """
+
+    def letter_grade(score):
+        if score < 0 or score > 100:
+            return 'Invalid'
+
+        if score >= 90:
+            letter = 'A'
+        elif score >= 80:
+            letter = 'B'
+        elif score >= 70:
+            letter = 'C'
+        elif score >= 60:
+            letter = 'D'
+        else:
+            return 'F'
+
+        last_digit = score % 10
+        if letter == 'A':
+            if score == 100 or last_digit >= 7:
+                return 'A+'
+            elif last_digit <= 2:
+                return 'A-'
+        else:
+            if last_digit >= 7:
+                return letter + '+'
+            elif last_digit <= 2:
+                return letter + '-'
+
+        return letter
+
+    assert letter_grade(100) == 'A+'
+    assert letter_grade(97) == 'A+'
+    assert letter_grade(95) == 'A'
+    assert letter_grade(90) == 'A-'
+    assert letter_grade(88) == 'B+'
+    assert letter_grade(85) == 'B'
+    assert letter_grade(81) == 'B-'
+    assert letter_grade(74) == 'C'
+    assert letter_grade(60) == 'D-'
+    assert letter_grade(59) == 'F'
+    assert letter_grade(0) == 'F'
+    assert letter_grade(-5) == 'Invalid'
+    assert letter_grade(101) == 'Invalid'

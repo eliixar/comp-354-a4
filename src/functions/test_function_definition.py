@@ -132,3 +132,9 @@ def test_function_definition():
     assert smallest == 4
     assert largest == 100
 
+    # A function can have no reutrn statement. It would return None.
+    def add_ten(value):
+        value + 10
+
+    assert add_ten(0) is None
+

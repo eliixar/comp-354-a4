@@ -121,3 +121,20 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+    # Function returning multiple values at once. It returns a tuple
+    def min_max(numbers):
+        return min(numbers), max(numbers)
+
+    assert min_max([30,4,6,7,8,100]) == (4, 100)
+    
+    smallest, largest = min_max([30,4,6,7,8,100])
+    assert smallest == 4
+    assert largest == 100
+
+    # A function can have no reutrn statement. It would return None.
+    def add_ten(value):
+        value + 10
+
+    assert add_ten(0) is None
+

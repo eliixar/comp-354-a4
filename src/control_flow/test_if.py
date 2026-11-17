@@ -50,3 +50,47 @@ def test_conditional_expression():
 
     labels = ['even' if n % 2 == 0 else 'odd' for n in range(4)]
     assert labels == ['even', 'odd', 'even', 'odd']
+
+
+def test_if_with_truthiness_and_combined_conditions():
+    """Truthy/falsy values and combining conditions with and, or, not.
+
+    An if statement does not need a real boolean. Values such as 0, '' (empty string),
+    [] (empty list), {} (empty dict) and None are treated as False ("falsy"); almost
+    everything else is treated as True ("truthy"). Conditions can be combined with
+    the keywords and, or and not.
+    """
+
+    for falsy_value in [0, '', [], {}, None]:
+        entered = False
+        if falsy_value:
+            entered = True
+        assert entered is False
+
+    for truthy_value in [1, 'text', [0], {'key': 'value'}]:
+        entered = False
+        if truthy_value:
+            entered = True
+        assert entered is True
+
+    age = 25
+    has_ticket = True
+
+    if age >= 18 and has_ticket:
+        can_enter = True
+    else:
+        can_enter = False
+
+    assert can_enter is True
+
+    is_weekend = False
+    is_holiday = True
+    assert (is_weekend or is_holiday) is True
+
+    shopping_list = []
+    if not shopping_list:
+        message = 'Nothing to buy'
+    else:
+        message = 'Go shopping'
+
+    assert message == 'Nothing to buy'
